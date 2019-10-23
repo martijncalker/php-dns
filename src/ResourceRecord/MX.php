@@ -54,7 +54,7 @@ final class MX extends Record
      */
     public function getPreference(): int
     {
-        return $this->preference;
+        return (int) $this->preference;
     }
 
     /**
