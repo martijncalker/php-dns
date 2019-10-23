@@ -22,6 +22,12 @@ abstract class Record
      */
     private $data;
 
+    /**
+     * Record constructor.
+     * @param string $name
+     * @param int $ttl
+     * @param string $data
+     */
     public function __construct(
         string $name,
         int $ttl,
