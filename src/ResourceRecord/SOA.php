@@ -56,8 +56,8 @@ final class SOA extends Record
     /**
      * @var int
      * A 32 bit time value that specifies the upper limit on
-    the time interval that can elapse before the zone is no
-    longer authoritative.
+     * the time interval that can elapse before the zone is no
+     * longer authoritative.
      */
     private $expire;
 
