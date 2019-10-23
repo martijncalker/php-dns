@@ -61,4 +61,33 @@ abstract class Record
     {
         return $this->data;
     }
+
+    /**
+     * @param Record $record
+     * @return bool
+     */
+    public function equals(Record $record):bool
+    {
+        if (get_called_class() !== get_class($record)) {
+            return false;
+        }
+
+        foreach ($this->getCompareFields() as $field) {
+            $method = "get".$field;
+
+            if ($record->$method() !== $this->$method()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getCompareFields(): array
+    {
+        return ['Data'];
+    }
 }
