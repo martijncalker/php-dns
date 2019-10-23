@@ -54,7 +54,7 @@ final class MX extends Record
      */
     public function getPreference(): int
     {
-        return $this->preference;
+        return (int) $this->preference;
     }
 
     /**
@@ -62,6 +62,17 @@ final class MX extends Record
      */
     public function getExchange(): string
     {
-        return $this->exchange;
+        return strtolower($this->exchange);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getCompareFields(): array
+    {
+        return [
+            'Preference',
+            'Exchange'
+        ];
     }
 }

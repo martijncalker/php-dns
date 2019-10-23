@@ -94,7 +94,7 @@ final class SOA extends Record
      */
     public function getMname(): string
     {
-        return $this->mname;
+        return strtolower($this->mname);
     }
 
     /**
@@ -102,7 +102,7 @@ final class SOA extends Record
      */
     public function getRname(): string
     {
-        return $this->rname;
+        return strtolower($this->rname);
     }
 
     /**
@@ -110,7 +110,7 @@ final class SOA extends Record
      */
     public function getSerial(): int
     {
-        return $this->serial;
+        return (int) $this->serial;
     }
 
     /**
@@ -118,7 +118,7 @@ final class SOA extends Record
      */
     public function getRefresh(): int
     {
-        return $this->refresh;
+        return (int) $this->refresh;
     }
 
     /**
@@ -126,7 +126,7 @@ final class SOA extends Record
      */
     public function getRetry(): int
     {
-        return $this->retry;
+        return (int) $this->retry;
     }
 
     /**
@@ -134,7 +134,7 @@ final class SOA extends Record
      */
     public function getExpire(): int
     {
-        return $this->expire;
+        return (int) $this->expire;
     }
 
     /**
@@ -142,6 +142,22 @@ final class SOA extends Record
      */
     public function getMinimum(): int
     {
-        return $this->minimum;
+        return (int) $this->minimum;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getCompareFields(): array
+    {
+        return [
+            'Mname',
+            'Rname',
+            'Serial',
+            'Refresh',
+            'Retry',
+            'Expire',
+            'Minimum',
+        ];
     }
 }
