@@ -1,0 +1,11 @@
+{
+    "name": "vancalker/dns",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "vanCalker\\DNS\\": "src/"
+        }
+    }
+}
